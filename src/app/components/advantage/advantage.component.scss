@@ -1,0 +1,51 @@
+.advantage {
+  display: flex;
+  flex-direction: column;
+}
+.advantage__number {
+  position: relative;
+  font-size: 60px;
+  font-family: GilroyExtrabold, sans-serif;
+  color: rgb(255, 255, 255);
+  width: 70px;
+  height: 70px;
+  background-color: rgb(130, 19, 40);
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: all 300ms ease 0s;
+}
+.advantage__number-span {
+  position: absolute;
+  left: calc(50% - 16.5px);
+  bottom: -10px;
+  display: block;
+  z-index: 11;
+}
+.advantage:hover .advantage__number{
+  color: #821328;
+  background-color: #eba8b1;
+  cursor: default;
+}
+.advantage__title {
+  font-size: 20px;
+  font-family: GilroyExtrabold, sans-serif;
+  color: rgb(51, 25, 7);
+  margin-bottom: 20px;
+}
+.advantage__text {
+  font-size: 15px;
+  font-family: GilroyMedium, sans-serif;
+  color: rgb(51, 25, 7);
+  line-height: 1.333;
+  transition: all 500ms;
+}
+
+@media screen and (max-width: 615px) {
+  .advantage__title {
+    font-size: 18px;
+  }
+  .advantage__text {
+    font-size: 13px;
+  }
+}
+

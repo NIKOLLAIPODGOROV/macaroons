@@ -1,0 +1,10 @@
+<figure *ngIf = "showCart" class="cart">
+  <div class="cart__counter">{{cartService.count}}</div>
+  <figure class="cart__image">
+    <img src="assets/images/icons/cart.png" alt="подарок">
+  </figure>
+  <p class="cart__message">
+    <span *ngIf="cartService.count else cartEmpty">{{cartService.sum | currency}}</span>
+    <ng-template #cartEmpty><span>Корзина пуста!</span></ng-template>
+  </p>
+</figure>

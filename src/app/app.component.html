@@ -1,0 +1,104 @@
+<section class="main">
+  <header-component
+    [aboutElement] = "aboutElement"
+    [productsElement] = "productsElement"
+    [orderElement] = "orderElement"
+  ></header-component>
+  <section class="main__content">
+    <section class="container main__container">
+      <article class="main__info">
+        <h1 class="main__title">Мягкие французские пироженки Macaroons</h1>
+        <p class="main__text">Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками
+          Macaroon!</p>
+        <button type="button" class="btn-red main__btn"
+                buttonStyleDirective
+                [bgColor] = "'linear-gradient( 0deg, rgb(113,8,30) 0%, rgb(215,72,92) 100%)'"
+                [hoverShadowColor] = "'rgba(130, 19, 40, 0.5)'"
+                (click)="commonService.scrollTo(productsElement)">Выбрать макарун
+        </button>
+      </article>
+      <figure class="main__image">
+        <img class="main__image-img" src="./assets/images/main-image.png" alt="Коробка Macaroons">
+      </figure>
+    </section>
+  </section>
+</section>
+<section #aboutElement class="advantages">
+  <section class="container advantages__container">
+    <article class="advantages__info">
+      <h2 class="advantages__title">Мы печём для вас вкуснейшие макаруны уже более 10 лет</h2>
+      <p class="advantages__description">
+        Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
+        ароматизаторов, красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей, маргарина,
+        разрыхлителей и улучшителей муки.
+      </p>
+    </article>
+    <figure class="advantages__image">
+      <img class="advantages__image-img" src="./assets/images/macaroon.png" alt="Вкуснейший МАКАРУН!">
+    </figure>
+    <section class="advantages__items">
+      <advantage-component *ngFor="let advantage of advantages; let i = index"
+                           [advantage] = 'advantage'
+                           [index] = 'i'>
+      </advantage-component>
+    </section>
+  </section>
+</section>
+<section #productsElement class="products">
+  <section class="container">
+    <h2 class="products__title">Выберите свой макарун</h2>
+    <section class="products__items">
+      <product-component
+        *ngFor="let product of products"
+        [product]="product"
+        (addToCartEvent)="innerToForm($event, orderElement)">
+      </product-component>
+    </section>
+  </section>
+</section>
+<section #orderElement class="order">
+  <section class="container order__container">
+    <figure class="order__image">
+      <img src="./assets/images/macaronsss.png" alt="Макаруны" class="order__image-img">
+      <img src="./assets/images/strawberry1.png" alt="Клубничка" class="strawberry-img order__image-strawberry-img">
+      <img src="./assets/images/strawberry2.png" alt="Клубничка"
+           class="strawberry-img strawberry-img_visible order__info-strawberry-img">
+    </figure>
+    <article class="order__info">
+      <h2 class="order__title">Закажите макарун!</h2>
+      <p class="order__text">
+        Выберите понравившийся макарун, заполните форму и ожидайте звонка нашего пекаря!
+      </p>
+      <form action="#" class="order__form">
+        <section class="order__choice">
+          <h3 class="form-title order__choice-title">Ваш выбор</h3>
+          <label (click)="commonService.scrollTo(productsElement)" class="order-input-wrapper order__choice-input-wrapper">
+            <input [(ngModel)]="orderValue.productTitle"
+                   readonly
+                   class="order-input order__choice-input"
+                   name="product" type="text"
+                   placeholder="Выбирите макарун">
+          </label>
+        </section>
+        <section class="order__data">
+          <h3 class="form-title order__data-title">Заполните данные для заказа</h3>
+          <label class="order-input-wrapper order__name-input-wrapper">
+            <input [(ngModel)]="orderValue.userName" class="order-input order__name-input" name="user-name" type="text"
+                   placeholder="Ваше имя">
+          </label>
+          <label class="order-input-wrapper order__phone-input-wrapper">
+            <input [(ngModel)] = "orderValue.userPhone" class="order-input order__phone-input" name="user-phone[]" type="tel"
+                   placeholder="(___) ___ - __ - __">
+          </label>
+        </section>
+        <button (click)="createOrder()"
+                class="btn-red order__btn" type="button"
+                buttonStyleDirective
+                [bgColor] = "'linear-gradient( 0deg, rgb(113,8,30) 0%, rgb(215,72,92) 100%)'"
+                [hoverShadowColor] = "'rgba(130, 19, 40, 0.5)'">Оформить заказ
+        </button>
+      </form>
+      <img src="assets/images/strawberry2.png" alt="Клубничка" class="strawberry-img order__info-strawberry-img">
+    </article>
+  </section>
+</section>

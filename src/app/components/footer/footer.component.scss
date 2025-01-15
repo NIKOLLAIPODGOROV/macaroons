@@ -1,0 +1,45 @@
+.footer {
+  background-color: #c0707c;
+  padding: 72px 0 61px;
+}                                      /*блок*/
+.footer__item-rights-mobile {
+  display: none;
+}
+.footer__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+@media screen and (max-width: 615px) {
+  .footer {
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 426px) {
+  .footer__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .footer__items {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+  }
+  .footer__item-logo {
+    order: 1;
+  }
+  .footer__item-instagram {
+    order: 3;
+  }
+  .footer__item-phone {
+    order: 2;
+  }
+  .footer__item-rights-mobile {
+    order: 4;
+    display: block;
+  }
+  .footer__item-rights-mobile {
+    display: block;
+  }
+}

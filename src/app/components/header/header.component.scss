@@ -1,0 +1,117 @@
+.burger {
+  display: none;
+  width: 40px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.burger__img{
+  max-width: 100%;
+  pointer-events: none;
+}
+.close {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+}                                   /*блок*/
+.close__svg {
+  max-width: 100%;
+  fill: #ffefef;
+  pointer-events: none;
+}
+.close:hover {
+  transform: rotate(180deg);
+}
+.main__header {
+  padding: 37px 0 29px;
+}
+.header__container {
+  display: grid;
+  grid-template-columns: minmax(180px, 345px) minmax(auto ,643px) minmax(220px ,1fr);
+  align-items: start;
+}
+
+.menu__items {
+  display: flex;
+  justify-content: space-between;
+  width: 315px;
+  position: relative;
+}
+.menu__link {
+  font-size: 14px;
+  font-family: GilroyMedium, sans-serif;
+  color: rgb(119, 11, 29);
+  transform: scaleX(0);
+  position: relative;
+  cursor: pointer;
+}
+.menu__link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgb(119, 11, 29);
+  transform: scaleX(0);
+  opacity: 0;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: all 300ms ease 0s;
+}
+.menu__link:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    grid-template-columns: minmax(210px, 345px) minmax(auto ,643px) minmax(220px ,1fr);
+  }
+  .main__phone_hidden {
+    display: none;
+  }
+}
+@media screen and (max-width: 615px) {
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .burger {
+    display: block;
+  }
+  .menu__items {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(152, 80, 91, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__items_open {
+    display: flex;
+  }
+  .menu__item {
+    padding: 20px 0;
+  }
+  .menu__link {
+    font-size: 34px;
+    color: #ffefef;
+  }
+  .menu__link::after {
+    background-color: #ffefef;
+  }
+  .close {
+    display: block;
+  }
+}

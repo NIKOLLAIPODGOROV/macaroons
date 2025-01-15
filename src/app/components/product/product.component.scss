@@ -1,0 +1,51 @@
+.product {
+  position: relative;
+  padding: 107px 20px 27px;
+  border: 2px solid  rgb(255, 255, 255);
+  border-radius: 20px;
+  width: 263px;
+}                                   /*блок*/
+
+.product__image {
+  position: absolute;
+  left: calc(50% - 96px);
+  top: -59px;
+  width: 192px;
+  transition: all 300ms ease 0s;
+}
+.product:hover .product__image {
+  transform: scale(1.1);
+}
+.product__image-img {
+  max-width: 100%;
+}
+.product__title {
+  font-size: 18px;
+  font-family: TavolgaFree, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.product__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product__text {
+  font-size: 15px;
+  font-family: GilroyRegular, sans-serif;
+  color: rgb(255, 255, 255);
+}
+.product__quantity {
+  margin-bottom: 15px;
+}
+.btn-red_short {/*модификатор*/
+  padding: 0;
+  width: 130px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+}

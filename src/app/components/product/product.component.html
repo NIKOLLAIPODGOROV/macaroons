@@ -1,0 +1,21 @@
+<article class="product">
+  <figure class="product__image">
+    <img src="./assets/images/products/{{product.img}}" alt="Макарун с малиной"
+         class="product__image-img">
+  </figure>
+  <dl class="product__info">
+    <dt class="product__title">{{product.title}}</dt>
+    <dd class="product__text">
+      <p class="product__quantity">{{product.quantity}}</p>
+      <p class="product__price">{{product.price | currency}}</p>
+    </dd>
+    <dd class="product__action">
+      <button (click)="addToCart()"
+              class="btn-red btn-red_short"
+              buttonStyleDirective
+              [bgColor] = "'linear-gradient( 0deg, rgb(113,8,30) 0%, rgb(215,72,92) 100%)'"
+              [hoverShadowColor] = "'rgba(130, 19, 40, 0.5)'">Заказать
+      </button>
+    </dd>
+  </dl>
+</article>
