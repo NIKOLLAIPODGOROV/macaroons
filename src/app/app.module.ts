@@ -1,4 +1,4 @@
-import { registerLocaleData } from '@angular/common';
+import {CurrencyPipe, registerLocaleData} from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 registerLocaleData(localeRu);
 
@@ -16,6 +16,7 @@ import { AdvantageComponent } from './components/advantage/advantage.component';
 import { ButtonStyleDirective } from './directives/button-style.directive';
 import { PhoneMaskPipe } from './pipes/phone-mask.pipe';
 import {AppComponent} from "./app.component";
+import {ShortenTextPipe} from "./pipes/shorten-text.pipe";
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import {AppComponent} from "./app.component";
     AdvantageComponent,
     ButtonStyleDirective,
     PhoneMaskPipe,
+    ShortenTextPipe,
+
   ],
   imports: [
     BrowserModule,
